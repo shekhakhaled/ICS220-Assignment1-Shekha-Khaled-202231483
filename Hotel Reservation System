@@ -1,0 +1,338 @@
+class User:
+    def __init__(self, userID, name, email, password, phoneNumber):
+        self.__userID = userID
+        self.__name = name
+        self.__email = email
+        self.__password = password
+        self.__phoneNumber = phoneNumber
+
+    # Getters and Setters
+    def getUserID(self):
+        return self.__userID
+
+    def getName(self):
+        return self.__name
+
+    def setName(self, name):
+        self.__name = name
+
+    def getEmail(self):
+        return self.__email
+
+    def setEmail(self, email):
+        self.__email = email
+
+    def getPassword(self):
+        return self.__password
+
+    def setPassword(self, password):
+        self.__password = password
+
+    def getPhoneNumber(self):
+        return self.__phoneNumber
+
+    def setPhoneNumber(self, phoneNumber):
+        self.__phoneNumber = phoneNumber
+
+    # Function headers
+    def login(self):
+        """user login"""
+        pass  
+
+    def makeReservation(self):
+        """Allows the user to make a reservation"""
+        pass  
+
+    def cancelReservation(self):
+        """Allows the user to cancel a reservation"""
+        pass  
+
+    def checkAvailability(self):
+        """Allows the user to check room availability"""
+        pass  
+    
+class Reservation:
+    def __init__(self, reservationID, checkInDate, checkOutDate, roomType, status):
+        self.__reservationID = reservationID
+        self.__checkInDate = checkInDate
+        self.__checkOutDate = checkOutDate
+        self.__roomType = roomType
+        self.__status = status
+
+    # Getters and Setters
+    def getReservationID(self):
+        return self.__reservationID
+
+    def getCheckInDate(self):
+        return self.__checkInDate
+
+    def setCheckInDate(self, checkInDate):
+        self.__checkInDate = checkInDate
+
+    def getCheckOutDate(self):
+        return self.__checkOutDate
+
+    def setCheckOutDate(self, checkOutDate):
+        self.__checkOutDate = checkOutDate
+
+    def getRoomType(self):
+        return self.__roomType
+
+    def setRoomType(self, roomType):
+        self.__roomType = roomType
+
+    def getStatus(self):
+        return self.__status
+
+    def setStatus(self, status):
+        self.__status = status
+
+    # Function headers
+    def confirmReservation(self):
+        """Confirm the reservation"""
+        pass  
+
+    def cancelReservation(self):
+        """Cancel the reservation"""
+        pass 
+
+    def updateStatus(self, status):
+        """Update the status of the reservation"""
+        pass  
+
+class Room:
+    def __init__(self, roomID, roomType, availability, pricePerNight, floorNumber):
+        self.__roomID = roomID
+        self.__roomType = roomType
+        self.__availability = availability
+        self.__pricePerNight = pricePerNight
+        self.__floorNumber = floorNumber
+
+    # Getters and Setters
+    def getRoomID(self):
+        return self.__roomID
+
+    def getRoomType(self):
+        return self.__roomType
+
+    def setRoomType(self, roomType):
+        self.__roomType = roomType
+
+    def getAvailability(self):
+        return self.__availability
+
+    def setAvailability(self, availability):
+        self.__availability = availability
+
+    def getPricePerNight(self):
+        return self.__pricePerNight
+
+    def setPricePerNight(self, pricePerNight):
+        self.__pricePerNight = pricePerNight
+
+    def getFloorNumber(self):
+        return self.__floorNumber
+
+    def setFloorNumber(self, floorNumber):
+        self.__floorNumber = floorNumber
+
+    # Function headers
+    def checkAvailability(self, checkInDate, checkOutDate):
+        """Check if the room is available for given dates (check-in and check-out dates)"""
+        pass  
+
+class HotelStaff:
+    def __init__(self, staffID, name, position, email, phoneNumber):
+        self.__staffID = staffID
+        self.__name = name
+        self.__position = position
+        self.__email = email
+        self.__phoneNumber = phoneNumber
+
+    # Getters and Setters
+    def getStaffID(self):
+        return self.__staffID
+
+    def getName(self):
+        return self.__name
+
+    def setName(self, name):
+        self.__name = name
+
+    def getPosition(self):
+        return self.__position
+
+    def setPosition(self, position):
+        self.__position = position
+
+    def getEmail(self):
+        return self.__email
+
+    def setEmail(self, email):
+        self.__email = email
+
+    def getPhoneNumber(self):
+        return self.__phoneNumber
+
+    def setPhoneNumber(self, phoneNumber):
+        self.__phoneNumber = phoneNumber
+
+    # Function headers
+    def makeReservationForGuest(self, guest):
+        """Allow hotel staff to make a reservation"""
+        pass  
+
+    def cancelReservationForGuest(self, guest):
+        """Allow hotel staff to cancel a reservation"""
+        pass  
+
+    def updateReservation(self, reservation):
+        pass
+    
+class Payment:
+    def __init__(self, paymentID, reservationID, amount, paymentMethod, status):
+        self.__paymentID = paymentID
+        self.__reservationID = reservationID
+        self.__amount = amount
+        self.__paymentMethod = paymentMethod
+        self.__status = status
+
+    # Getters and Setters
+    def getPaymentID(self):
+        return self.__paymentID
+
+    def getReservationID(self):
+        return self.__reservationID
+
+    def getAmount(self):
+        return self.__amount
+
+    def setAmount(self, amount):
+        self.__amount = amount
+
+    def getPaymentMethod(self):
+        return self.__paymentMethod
+
+    def setPaymentMethod(self, paymentMethod):
+        self.__paymentMethod = paymentMethod
+
+    def getStatus(self):
+        return self.__status
+
+    def setStatus(self, status):
+        self.__status = status
+
+    # Function headers
+    def processPayment(self):
+        """Process the payment for the reservation"""
+        pass  
+
+    def updatePaymentStatus(self, status):
+        """Update the payment status"""
+        pass  
+    
+class Invoice:
+    def __init__(self, invoiceID, reservationID, paymentID, totalAmount, invoiceDate):
+        self.__invoiceID = invoiceID
+        self.__reservationID = reservationID
+        self.__paymentID = paymentID
+        self.__totalAmount = totalAmount
+        self.__invoiceDate = invoiceDate
+
+    # Getters and Setters
+    def getInvoiceID(self):
+        return self.__invoiceID
+
+    def getReservationID(self):
+        return self.__reservationID
+
+    def getPaymentID(self):
+        return self.__paymentID
+
+    def getTotalAmount(self):
+        return self.__totalAmount
+
+    def setTotalAmount(self, totalAmount):
+        self.__totalAmount = totalAmount
+
+    def getInvoiceDate(self):
+        return self.__invoiceDate
+
+    def setInvoiceDate(self, invoiceDate):
+        self.__invoiceDate = invoiceDate
+
+    # Function headers
+    def generateInvoice(self):
+        """Generate the invoice after payment"""
+        pass 
+
+    def getInvoiceDetails(self):
+        """Return the invoice details"""
+        pass  
+
+    
+#######tests#####
+
+# Creating a User object
+user = User(1, "Ted Vera", "tedvera@mac.com", "password123", "505-661-1110")
+
+# Printing user details
+print("User Details:")
+print("User ID:", user.getUserID())
+print("Name:", user.getName())
+print("Email:", user.getEmail())
+print("Phone:", user.getPhoneNumber())
+
+# Creating a Reservation object
+reservation = Reservation(52523687, "2010-08-22", "2010-08-24", "2 Queen Beds, Non-Smoking, Desk, Safe, Coffee Maker, Hair Dryer", "Confirmed")
+
+# Printing reservation details
+print("Reservation Details:")
+print("Reservation ID:", reservation.getReservationID())
+print("Check-in Date:", reservation.getCheckInDate())
+print("Check-out Date:", reservation.getCheckOutDate())
+print("Room Type:", reservation.getRoomType())
+print("Status:", reservation.getStatus())
+
+# Creating a Room object
+room = Room(1, "2 Queen Beds", True, 89.95, 1)
+
+# Printing room details
+print("Room Details:")
+print("Room ID:", room.getRoomID())
+print("Room Type:", room.getRoomType())
+print("Availability:", room.getAvailability())
+print("Price Per Night:", room.getPricePerNight())
+
+# Creating a HotelStaff object
+staff = HotelStaff(95467, "Shekha Khaled", "Receptionist", "Shekha.khaled@hotel.com", "055-500-0509")
+
+# Printing hotel staff details
+print("Hotel Staff Details:")
+print("Staff ID:", staff.getStaffID())
+print("Name:", staff.getName())
+print("Position:", staff.getPosition())
+print("Email:", staff.getEmail())
+print("Phone:", staff.getPhoneNumber())
+
+# Creating a Payment object
+payment = Payment(9904, 52523687, 201.48, "Mastercard", "Completed")
+
+# Printing payment details
+print("Payment Details:")
+print("Payment ID:", payment.getPaymentID())
+print("Reservation ID:", payment.getReservationID())
+print("Amount: $", payment.getAmount())
+print("Payment Method:", payment.getPaymentMethod())
+print("Status:", payment.getStatus())
+
+# Creating an Invoice object
+invoice = Invoice(601, 52523687, 9904, 201.48, "2010-08-24")
+
+# Printing invoice details
+print("Invoice Details:")
+print("Invoice ID:", invoice.getInvoiceID())
+print("Reservation ID:", invoice.getReservationID())
+print("Payment ID:", invoice.getPaymentID())
+print("Total Amount: $", invoice.getTotalAmount())
+print("Invoice Date:", invoice.getInvoiceDate())
